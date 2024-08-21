@@ -1,0 +1,35 @@
+{% extends "friender/layout.html" %}
+{% block body %}
+{% if user.is_authenticated %}
+    <div class="container">
+        <h1>Friends: </h1>
+        <div class="people">
+            {% for friend in friends %}
+                <div class="person">
+                    <a href="{% url 'message' friend.id %}"><img class="image" src="{{ friend.image }}" height="200px" width="200px" /></a>
+                    <br>
+                    <h1 class="name">{{ friend.name }}</h1>
+                </div>
+            {% empty %}
+                <br>
+                <h1 class="message">But you still can make new friends!</h1>
+            {% endfor %}
+        </div>
+        <br>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination pagination-lg">
+                {% if friends.has_previous %}
+                    <li class="page-item page_button"><a class="page-link" href="?page=1">&laquo; first</a></li>
+                    <li class="page-item page_button"><a class="page-link" href="?page={{ friends.previous_page_number }}">Previous</a></li>
+                {% endif %}
+                {% if friends.has_next %}
+                    <li class="page-item page_button"><a class="page-link" href="?page={{ friends.next_page_number }}">Next</a></li>
+                    <li class="page-item page_button"><a class="page-link" href="?page={{ friends.paginator.num_pages }}">last &raquo;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    {% else %}
+        <h1>You have to login first.</h1>
+    {% endif %}
+{% endblock %}

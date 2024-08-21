@@ -1,0 +1,54 @@
+.person {
+    border: 1px solid black;
+    padding: 30px;
+}
+
+.message, .name {
+    text-align: center;
+}
+
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.body {
+    padding: 20px;
+    display: flex;
+}
+
+.container {
+    display: block;
+}
+
+.people {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 25px;
+}
+
+.from, .to {
+    text-align: center;
+    border: 1px solid black;
+    padding: 50px;
+    margin: 20px;
+}
+
+.to {
+    background-color: #2ddf75;
+}
+
+.message_image {
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+
+.message_form {
+    text-align: center;
+}
+
+.page_button {
+    border: 1px solid black;
+}
