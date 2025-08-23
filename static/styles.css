@@ -20,6 +20,9 @@ p, h2, .header {
 
 .link {
     padding: 5px;
+    margin: 5px;
+    color: black;
+    background-color: lightgray;
     text-decoration: none;
     border: 1px solid black; 
 }
