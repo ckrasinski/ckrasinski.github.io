@@ -10,14 +10,16 @@ img {
     border: 4px solid black;
 }
 
-p, h2 {
+p, h2, .header {
     font-size: 36px;
-}
-
-.header {
-    font-size: 48px;
 }
 
 .header, h2 {
     text-decoration: underline;
+}
+
+.link {
+    padding: 5px;
+    text-decoration: none;
+    border: 1px solid black; 
 }
